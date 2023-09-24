@@ -1,4 +1,4 @@
-setwd("/Users/michaeljoshua/Desktop/Data Analytics/Lab 01/group1-selected")
+setwd("/Users/michaeljoshua/Desktop/Data Analytics/DataAnalytics_Fall2023_Michael_Fababeir/Labs/Lab 01/group1-selected")
 EPI_data <- read.csv("2010EPI_data.csv")
 #or
 #EPI_data <- read.xls("2010EPI_data.xls")
@@ -17,3 +17,16 @@ E <- EPI[!tf] # filters out NA values, new array
 #other data
 GRUMP_data <- read.csv("GPW3_GRUMP_SummaryInformation_2010.csv")
 
+attach(GRUMP_data)
+
+PopulationPerUnit <- as.numeric(PopulationPerUnit)
+PopulationPerUnit 
+tf <- is.na(PopulationPerUnit) 
+P <- PopulationPerUnit[!tf]
+
+summary(PopulationPerUnit)  
+fivenum(PopulationPerUnit,na.rm=TRUE)
+stem(PopulationPerUnit)	
+hist(PopulationPerUnit)
+lines(density(PopulationPerUnit,na.rm=TRUE,bw=1.)) 
+rug(PopulationPerUnit) 

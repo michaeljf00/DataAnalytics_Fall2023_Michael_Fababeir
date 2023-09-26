@@ -20,3 +20,4 @@ ggplot(diamonds, aes(x = cut_number(price, 10), y = carat)) +
 
 ggplot(diamonds, aes(x = cut_number(carat, 5), y = price, colour = cut)) +
   geom_boxplot()
+
